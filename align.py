@@ -69,7 +69,7 @@ def toggleSpindle(state):
   if state:
     serial.run('M05')
   else:
-    serial.run('M03')
+    serial.run('M03 S1000')
   return not state
  
 def update():
