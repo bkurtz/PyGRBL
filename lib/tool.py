@@ -359,7 +359,7 @@ class Tool(list):
       if ([l[3] for l in self[i:i+2]] == [0,1] and z > 0):
         lines.append('\n(Mill: %04i)'%(iMill))
         iMill += 1
-      lines.append('G%02i   X%.3f Y%.3f Z%.3f'%(cmd,x,y,z))
+      lines.append('G%02i   X%.4f Y%.4f Z%.4f'%(cmd,x,y,z))
     gcode ='\n'.join(lines)
     params = dict(units='G20' if (self.units == 'inch') else 'G21',
                   movement='G90' if self.abs else 'G91',
